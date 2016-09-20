@@ -1573,13 +1573,6 @@ int main(int argc, char **argv)
             args.push_back(CLANG_TARGET_OPT);
             args.push_back(target);
 
-            /*
-             * Prevent clang from including /usr/include in
-             * case a file is not found in our directories
-             */
-            args.push_back("-nostdinc");
-            args.push_back("-nostdinc++");
-
             auto pushdirs = [&](const string_vector &paths)
             {
                 for (const auto &dir : paths)
